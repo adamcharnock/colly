@@ -66,9 +66,16 @@ class Collate(object):
     def erased(self): return self.setA.difference(self.setB)
     
     # Calculations
-    def p_erased(self):
-        c, e = len(self.clean), len(self.erased)
+    def p_erased(self, pretty=False):
+        c, e = len(self.setA), len(self.erased)
         if c > e:
-            return 100 * float(e) / float(c)
+            v = 100 * float(e) / float(c)
         else:
-            return 100
+            v = 100
+        if pretty:
+            return "%.2f%% (%s of %s)" % ( v, e, c )
+        else:
+            return v
+    # Output to file
+    def write(self, prop, fd):
+        pass 

@@ -1,6 +1,7 @@
 #!/usr/bin/env python
+# TODO: After collate has run, should open into shell for interaction
+#       with the instance
 from collate import Collate
-
 import logging
 import optparse
 
@@ -37,8 +38,8 @@ def main():
     else:
         c = Collate(args[0], args[1])
     
-    print "Percentage lost:  %s" % ( c.p_erased() ) 
-    print "Added:            %s" % ( len(c.added) ) 
+    print "Lost rows:        %s" % ( c.p_erased(pretty=True) ) 
     print "Intact rows:      %s" % ( len(c.clean) ) 
+    print "Added:            %s" % ( len(c.added) ) 
 if __name__ == "__main__":
     main()
