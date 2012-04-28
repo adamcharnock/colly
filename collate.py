@@ -69,7 +69,7 @@ class Collate(object):
     # Comparison sets
     @property
     def all(self):
-    	return self.setB.union(self.setB)
+    	return self.setB.union(self.setA)
     
     @property
     def clean(self):
