@@ -40,13 +40,21 @@ class Collate(object):
     
     @setA.setter
     def setA(self, v):
+        ## Either raise an excepton, or set the value always.
+        ## (setting it only in some circumstances isn't
+        ## really expected, and could lead to hard to debug bugs.
+        ## So either do what is expected (set it), or raise an error that 
+        ## will smack the developer in the face :) )
         if self._setA == None:
-            self._setA = v
+            raise SomeKindOfError("setA has already been set.")
+        self._setA = v
     
     @setB.setter
     def setB(self, v):
+        # As above
         if self._setB == None:
-            self._setB = v
+            raise SomeKindOfError("setA has already been set.")
+        self._setB = v
 
     @setA.getter
     def setA(self):
