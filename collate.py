@@ -31,10 +31,12 @@ class Collate(object):
     ''' Make properties use validation & write-once only
     '''
     @property
-    def setA(self): return self._setA
+    def setA(self):
+    	return self._setA
     
     @property
-    def setB(self): return self._setB
+    def setB(self):
+    	return self._setB
     
     @setA.setter
     def setA(self, v):
@@ -47,25 +49,31 @@ class Collate(object):
             self._setB = v
 
     @setA.getter
-    def setA(self): return set(self._setA)
+    def setA(self):
+    	return set(self._setA)
 
     @setB.getter
-    def setB(self): return set(self._setB)
+    def setB(self):
+    	return set(self._setB)
 
     ''' Comparse datasets (/ wrappers for set built-in)
     '''
     # Comparison sets
     @property
-    def all(self): return self.setB.union(self.setB)
+    def all(self):
+    	return self.setB.union(self.setB)
     
     @property
-    def clean(self): return self.setB.intersection(self.setA)
+    def clean(self):
+    	return self.setB.intersection(self.setA)
     
     @property
-    def added(self): return self.setB.difference(self.setA)
+    def added(self):
+    	return self.setB.difference(self.setA)
     
     @property
-    def erased(self): return self.setA.difference(self.setB)
+    def erased(self):
+    	return self.setA.difference(self.setB)
     
     # Calculations
     def p_erased(self, pretty=False):
