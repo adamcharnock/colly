@@ -11,7 +11,7 @@ class Collate(object):
     	## I think the names a, b, aM, and bM need to be a bit more verbose,
     	## or if not possible, make sure they are described. 
         self.setA = self._prep(a, *aM)
-	self.setB = self._prep(b, *bM)
+        self.setB = self._prep(b, *bM)
         if self.setA == None or self.setB == None:
             ## Could also consider defining a custom Exception class if 
             ## you want it to be easy to catch exceptions (e.g. CollateDataError, or some such)
