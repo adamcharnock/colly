@@ -2,8 +2,6 @@ import sys
 import csv
 
 class Collate(object):
-    _setA = None
-    _setB = None
     
     ''' Csv parsing and formatting
     '''
