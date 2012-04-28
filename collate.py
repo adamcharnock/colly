@@ -93,6 +93,10 @@ class Collate(object):
         else:
             v = 100
         if pretty:
+            ## My knowledge of format strings isn't that great. So,
+            ## for my part, I'd love a little comment here to say what 
+            ## is going on :)
+            ## Oh! I see now, printing a percentage to two decimal places. Gotcha.
             return "%.2f%% (%s of %s)" % ( v, e, c )
         else:
             return v
