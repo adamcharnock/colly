@@ -21,11 +21,11 @@ class Collate(object):
         ''' Prepare values in selected column from CSV file (f)
         '''
         with open(csv_file) as f: ## Good use of a context :)
-            fn = []
+            fieldnames = []
             if col > 0:
-                fn += [0]*(col-len(fn)) #: Pad/ ignore columns (< col)
-            fn.append('name') #: Mark selected column 
-            raw = list(csv.DictReader(f, fieldnames=fn))
+                fieldnames += [0]*(col-len(fieldnames)) #: Pad/ ignore columns (< col)
+            fieldnames.append('name') #: Mark selected column 
+            raw = list(csv.DictReader(f, fieldnames=fieldnames))
             return set(map(lambda e: e['name'], raw[start:end]))
     
     ''' Make properties use validation & write-once only
