@@ -11,8 +11,9 @@ class Collate(object):
         self.setA = self._prep(a, *aM)
 	self.setB = self._prep(b, *bM)
         if self.setA == None or self.setB == None:
-            print "Operation failed"
-            raise 
+            ## Could also consider defining a custom Exception class if 
+            ## you want it to be easy to catch exceptions (e.g. CollateDataError, or some such)
+            raise ValueError('A description of the problem which occurred here.')
     
     def _prep(self, csv_file, col=0, start=0, end=sys.maxint):
         ''' Prepare values in selected column from CSV file (f)
