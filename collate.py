@@ -8,6 +8,8 @@ class Collate(object):
     ''' Csv parsing and formatting
     '''
     def __init__(self, a, b, aM=[], bM=[]):
+    	## I think the names a, b, aM, and bM need to be a bit more verbose,
+    	## or if not possible, make sure they are described. 
         self.setA = self._prep(a, *aM)
 	self.setB = self._prep(b, *bM)
         if self.setA == None or self.setB == None:
