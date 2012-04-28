@@ -18,7 +18,6 @@ class Collate(object):
     def _prep(self, csv_file, col=0, start=0, end=sys.maxint):
         ''' Prepare values in selected column from CSV file (f)
         '''
-        col, start, end = int(col), int(start), int(end)
         with open(csv_file) as f:
             fn = []
             if col > 0:
