@@ -70,4 +70,4 @@ class Colly(object):
         if c > e:
             return 100 * float(e) / float(c)
         else:
-            return 100 * float(c) / float(e)
+            return 100
