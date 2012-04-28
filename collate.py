@@ -85,6 +85,10 @@ class Collate(object):
     
     # Calculations
     def p_erased(self, pretty=False):
+        ## Again, I'd pick some more verbose variable names here,
+        ## it just makes it easier to read at a later date.
+        ## Same may also apply to 'p_erased' - not sure what the 'p'
+        ## stands for (but I am a little worse for wear today!)
         c, e = len(self.setA), len(self.erased)
         if c > e:
             v = 100 * float(e) / float(c)
